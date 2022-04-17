@@ -29,11 +29,11 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(10)
 renderer.render(scene, camera)
 
-// const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
-const brunoTexture = new THREE.TextureLoader().load('media/face1.jpg')
+const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
+
 const geometry = new THREE.TorusGeometry(15, 3, 16, 110)
+
 const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
-// const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
 const torus = new THREE.Mesh(geometry, material)
 
 torus.position.z = 30
@@ -60,12 +60,12 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('/space2.png')
+const spaceTexture = new THREE.TextureLoader().load('media/space2.png')
 scene.background = spaceTexture
 
 
 
-const lucasTexture = new THREE.TextureLoader().load('/face2.png')
+const lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
 const cube = new THREE.BoxGeometry(3, 3, 3)
 const cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
 const lucas = new THREE.Mesh(cube , cubeMaterial)
