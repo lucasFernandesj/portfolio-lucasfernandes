@@ -133,7 +133,22 @@
 
 
     </main>
-    <script src="/scripts/app.js"></script>
+    
+<script>
+  console.log('app.js connected')
+
+function reveal(element) {
+  var all = document.getElementsByTagName('*')
+  var num = element.className.charAt(1)
+  for (var i = 0; i < all.length; i++) {
+    if (all[i].classList.contains(`a${num}`)) {
+      all[i].classList.toggle('visible')
+    }
+  }
+}
+</script>
+
+
       <script type="module" src="/scripts/main.js"></script>
   </body>
 </html>
