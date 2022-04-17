@@ -59,12 +59,12 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('/media/space2.png')
+const spaceTexture = new THREE.TextureLoader().load('/space2.png')
 scene.background = spaceTexture
 
 
 
-const lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
+const lucasTexture = new THREE.TextureLoader().load('/face2.png')
 const cube = new THREE.BoxGeometry(3, 3, 3)
 const cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
 const lucas = new THREE.Mesh(cube , cubeMaterial)
