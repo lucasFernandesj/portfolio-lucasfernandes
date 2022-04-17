@@ -27,7 +27,6 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(10)
-renderer.render(scene, camera)
 
 const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
 
@@ -65,13 +64,13 @@ scene.background = spaceTexture
 
 
 
-const lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
-const cube = new THREE.BoxGeometry(3, 3, 3)
-const cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
-const lucas = new THREE.Mesh(cube , cubeMaterial)
+var lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
+var cube = new THREE.BoxGeometry(3, 3, 3)
+var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
+var lucas = new THREE.Mesh(cube , cubeMaterial)
 
 // const lucas = new THREE.Mesh(
-//   new THREE.BoxGeometry(3, 3, 3),
+  //   new THREE.BoxGeometry(3, 3, 3),
 //   new THREE.MeshBasicMaterial({ map: lucasTexture })
 // )
 
@@ -88,7 +87,7 @@ const moon = new THREE.Mesh(
     map: moonTexture,
     normalMap: normalTexture,
   })
-)
+  )
 
 
 scene.add(moon)
@@ -113,16 +112,17 @@ function animate() {
   torus.rotation.y += 0.005
   torus.rotation.z += 0.01
   controls.update()
-
+  
  
 
 
 
 
-
+  
   renderer.render(scene, camera)
 }
 animate()
 
 
+renderer.render(scene, camera)
 
