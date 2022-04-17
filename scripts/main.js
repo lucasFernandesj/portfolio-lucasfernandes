@@ -64,6 +64,7 @@ scene.background = spaceTexture
 
 
 
+
 var lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
 var cube = new THREE.BoxGeometry(3, 3, 3)
 var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
@@ -78,7 +79,7 @@ var lucas = new THREE.Mesh(cube , cubeMaterial)
 lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
-
+renderer.render(scene, camera)
 const moonTexture = new THREE.TextureLoader().load('media/moon2.png')
 const normalTexture = new THREE.TextureLoader().load('media/normal2.png')
 const moon = new THREE.Mesh(
@@ -88,7 +89,7 @@ const moon = new THREE.Mesh(
     normalMap: normalTexture,
   })
   )
-
+  renderer.render(scene, camera)
 
 scene.add(moon)
 moon.position.z = 8
