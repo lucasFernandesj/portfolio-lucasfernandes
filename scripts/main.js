@@ -2,17 +2,18 @@ import '/style.css';
 
 
 
-// import * as THREE from 'three';
-// import { AmbientLight } from 'three';
-// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import * as THREE from 'three';
+import { AmbientLight } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+
+let torus;
+// import {OrbitControls} from 'https://unpkg.com/three@0.127.0/examples/jsm/controls/OrbitControls.js'
+// import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
+// import { AmbientLight } from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 
 
-import {OrbitControls} from 'https://unpkg.com/three@0.127.0/examples/jsm/controls/OrbitControls.js'
-import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
-import { AmbientLight } from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 
-
-
+//scene
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(
   75,
@@ -28,25 +29,29 @@ renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(10)
 
+
+
+//torus
 const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
-
 const geometry = new THREE.TorusGeometry(15, 3, 16, 110)
-
 const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
-const torus = new THREE.Mesh(geometry, material)
-
+ torus = new THREE.Mesh(geometry, material)
 torus.position.z = 30
 torus.position.setX(10)
 
 
+//light
 const pointLight = new THREE.PointLight(0xffffff) 
 pointLight.position.set(5, 5, 5)
 const ambientLight = new AmbientLight(0xffffff)
 scene.add(pointLight, ambientLight)
 
+//controls
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.update()
 
+
+//stars
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24)
   const mat = new THREE.MeshStandardMaterial({ color: 0xffffff })
@@ -59,27 +64,25 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
+
+//spaceimg
 const spaceTexture = new THREE.TextureLoader().load('media/space2.png')
 scene.background = spaceTexture
 
 
 
-
+//lucas
 var lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
 var cube = new THREE.BoxGeometry(3, 3, 3)
 var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
 var lucas = new THREE.Mesh(cube , cubeMaterial)
-
-// const lucas = new THREE.Mesh(
-  //   new THREE.BoxGeometry(3, 3, 3),
-//   new THREE.MeshBasicMaterial({ map: lucasTexture })
-// )
-
-
 lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
-renderer.render(scene, camera)
+
+
+
+//moon
 const moonTexture = new THREE.TextureLoader().load('media/moon2.png')
 const normalTexture = new THREE.TextureLoader().load('media/normal2.png')
 const moon = new THREE.Mesh(
@@ -125,5 +128,7 @@ function animate() {
 animate()
 
 
-renderer.render(scene, camera)
 
+window.onload = (event)=>{
+  renderer.render(scene, camera)
+}
