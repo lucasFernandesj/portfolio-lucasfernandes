@@ -74,7 +74,7 @@ Array(250).fill().forEach(addStar)
 const spaceTexture = new THREE.TextureLoader().load('./media/space.jpg')
 scene.background = spaceTexture
 
-const lucasTexture = new THREE.TextureLoader().load('./media/face1.jpg')
+const lucasTexture = new THREE.TextureLoader().load('./media/face2.png')
 const lucas = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: lucasTexture })
