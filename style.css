@@ -1,0 +1,106 @@
+
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
+
+main{
+  width:100vw;
+  color: white;
+  z-index: 99;
+  position:absolute;
+  width: 100%;
+  margin: 0px auto;
+  padding: 120px 0px;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+}
+
+p{
+  background-color: black;
+  padding: 15px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 60px;
+  border: 3px solid white;
+  border-radius: 10px;
+  opacity: 0.9;
+  
+}
+.about{
+grid-column: 8 /12;
+
+}
+.education{
+grid-column: 8 /  12;
+
+}
+.faq{
+  grid-column: 2 /  6;
+  
+}
+.skills{
+  grid-column: 2 /  6;
+  
+}
+.now{
+  grid-column: 2 /  6;
+  
+}
+.experience{
+grid-column: 2 / 11;
+ 
+}
+.languages{
+  grid-column: 2/6;
+}
+
+.find-me{
+  margin-top: 80px;
+  margin-left: 40px;
+  grid-column: 5 / 9;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-family: 'Times New Roman', Times, serif;
+}
+.contact{
+  margin-top: 40px;
+grid-column: 4 / 12;
+ padding: 10px;
+
+}
+
+
+.contact-img{
+  
+  margin-left: 35px;
+}
+
+
+
+.big{
+  
+  font-size: larger;
+  font-weight: bolder;
+  
+  
+  
+}
+
+
+#q:hover {
+    text-decoration: underline;
+    cursor: zoom-in;
+}
+
+
+.visible{
+  display:none;
+}
+
+footer{
+  margin-top: 65px;
+  grid-column: 6 / 8;
+}
