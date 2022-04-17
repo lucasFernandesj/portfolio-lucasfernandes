@@ -79,8 +79,8 @@ lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
 
-const moonTexture = new THREE.TextureLoader().load('/moon2.png')
-const normalTexture = new THREE.TextureLoader().load('/normal2.png')
+const moonTexture = new THREE.TextureLoader().load('media/moon2.png')
+const normalTexture = new THREE.TextureLoader().load('media/normal2.png')
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({
