@@ -70,7 +70,7 @@ Array(250).fill().forEach(addStar)
 //spaceimg
 function renderSpace(){
 
-  const spaceTexture = new THREE.TextureLoader().load('/media/linkedin.png')
+  const spaceTexture = new THREE.TextureLoader().load('/media/space2.png')
   scene.background = spaceTexture
 }
 
@@ -79,7 +79,7 @@ function renderSpace(){
 //lucas
 function renderLucas(){
 
-  var lucasTexture = new THREE.TextureLoader().load('/media/whatsapp.png')
+  var lucasTexture = new THREE.TextureLoader().load('https://raw.githubusercontent.com/lucasFernandesj/face/main/face2.png')
   var cube = new THREE.BoxGeometry(3, 3, 3)
   var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
   lucas = new THREE.Mesh(cube , cubeMaterial)
@@ -93,7 +93,7 @@ function renderLucas(){
 //moon
 function renderMoon(){
 
-  const moonTexture = new THREE.TextureLoader().load('/media/nerdfaceico.ico')    
+  const moonTexture = new THREE.TextureLoader().load('/media/moon2.png')    
   const normalTexture = new THREE.TextureLoader().load('/media/normal2.png')
    moon = new THREE.Mesh(
     new THREE.SphereGeometry(5, 32, 32),
