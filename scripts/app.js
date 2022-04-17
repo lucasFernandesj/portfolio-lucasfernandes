@@ -1,3 +1,5 @@
+console.log('app.js connected')
+
 function reveal(element) {
   var all = document.getElementsByTagName('*')
   var num = element.className.charAt(1)
