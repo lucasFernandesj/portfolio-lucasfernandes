@@ -93,7 +93,7 @@ function renderLucas(){
 //moon
 function renderMoon(){
 
-  const moonTexture = new THREE.TextureLoader().load('/media/nerdface.png')    
+  const moonTexture = new THREE.TextureLoader().load('/media/nerdfaceico.ico')    
   const normalTexture = new THREE.TextureLoader().load('/media/normal2.png')
    moon = new THREE.Mesh(
     new THREE.SphereGeometry(5, 32, 32),
