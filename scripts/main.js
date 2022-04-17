@@ -7,6 +7,8 @@ import { AmbientLight } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
 let torus;
+let moon;
+let lucas;
 // import {OrbitControls} from 'https://unpkg.com/three@0.127.0/examples/jsm/controls/OrbitControls.js'
 // import * as THREE from 'https://unpkg.com/three@0.127.0/build/three.module.js';
 // import { AmbientLight } from 'https://unpkg.com/three@0.127.0/build/three.module.js';
@@ -66,37 +68,46 @@ Array(250).fill().forEach(addStar)
 
 
 //spaceimg
-const spaceTexture = new THREE.TextureLoader().load('media/space2.png')
-scene.background = spaceTexture
+function renderSpace(){
+
+  const spaceTexture = new THREE.TextureLoader().load('media/space2.png')
+  scene.background = spaceTexture
+}
 
 
 
 //lucas
-var lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
-var cube = new THREE.BoxGeometry(3, 3, 3)
-var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
-var lucas = new THREE.Mesh(cube , cubeMaterial)
-lucas.position.z =30
-scene.add(lucas)
-lucas.add(torus)
+function renderLucas(){
+
+  var lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
+  var cube = new THREE.BoxGeometry(3, 3, 3)
+  var cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
+  lucas = new THREE.Mesh(cube , cubeMaterial)
+  lucas.position.z =30
+  scene.add(lucas)
+  lucas.add(torus)
+}
 
 
 
 //moon
-const moonTexture = new THREE.TextureLoader().load('media/moon2.png')
-const normalTexture = new THREE.TextureLoader().load('media/normal2.png')
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(5, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: normalTexture,
-  })
-  )
-  renderer.render(scene, camera)
+function renderMoon(){
 
-scene.add(moon)
-moon.position.z = 8
-moon.position.setX(-10)
+  const moonTexture = new THREE.TextureLoader().load('media/moon2.png')
+  const normalTexture = new THREE.TextureLoader().load('media/normal2.png')
+   moon = new THREE.Mesh(
+    new THREE.SphereGeometry(5, 32, 32),
+    new THREE.MeshStandardMaterial({
+      map: moonTexture,
+      normalMap: normalTexture,
+    })
+    )
+    renderer.render(scene, camera)
+  
+  scene.add(moon)
+  moon.position.z = 8
+  moon.position.setX(-10)
+}
 
 
 
@@ -130,5 +141,9 @@ animate()
 
 
 window.onload = (event)=>{
+  renderMoon()
+  renderLucas()
+  renderSpace()
   renderer.render(scene, camera)
+
 }
