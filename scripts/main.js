@@ -62,12 +62,19 @@ Array(250).fill().forEach(addStar)
 const spaceTexture = new THREE.TextureLoader().load('/media/space2.png')
 scene.background = spaceTexture
 
-const lucasTexture = new THREE.TextureLoader().load('/media/github.png')
-const lucas = new THREE.Mesh(
-  new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: lucasTexture })
-)
-//lucas.position.y = 30
+
+
+const lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
+const cube = new THREE.BoxGeometry(3, 3, 3)
+const cubeMaterial = new THREE.MeshBasicMaterial({ map: lucasTexture })
+const lucas = new THREE.Mesh(cube , cubeMaterial)
+
+// const lucas = new THREE.Mesh(
+//   new THREE.BoxGeometry(3, 3, 3),
+//   new THREE.MeshBasicMaterial({ map: lucasTexture })
+// )
+
+
 lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
@@ -92,7 +99,7 @@ moon.position.setX(-10)
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top
   moon.rotation.y += 0.095
-  lucas.rotation.y += 0.0
+  lucas.rotation.y += 0.04
   camera.position.z = t * -0.08
   camera.position.x = t * -0.0009
   camera.position.y = t * -0.0009
