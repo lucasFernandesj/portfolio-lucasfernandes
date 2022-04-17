@@ -71,10 +71,10 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('/media/space.jpg')
+const spaceTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
 scene.background = spaceTexture
 
-const lucasTexture = new THREE.TextureLoader().load('media/face1.jpg')
+const lucasTexture = new THREE.TextureLoader().load('/media/face1.jpg')
 const lucas = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: lucasTexture })
