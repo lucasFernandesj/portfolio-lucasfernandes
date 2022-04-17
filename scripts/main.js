@@ -34,21 +34,9 @@ const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/pri
 const geometry = new THREE.TorusGeometry(15, 3, 16, 110)
 const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
 const torus = new THREE.Mesh(geometry, material)
-//scene.add(torus)
+
 torus.position.z = 30
 torus.position.setX(10)
-
-
- 
-
-
-
-
-
-
-
-
-
 
 
 const pointLight = new THREE.PointLight(0xffffff) 
@@ -71,10 +59,10 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('./media/space.jpg')
+const spaceTexture = new THREE.TextureLoader().load('/media/space2.png')
 scene.background = spaceTexture
 
-const lucasTexture = new THREE.TextureLoader().load('./media/face2.png')
+const lucasTexture = new THREE.TextureLoader().load('/media/face2.png')
 const lucas = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: lucasTexture })
@@ -84,8 +72,8 @@ lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
 
-const moonTexture = new THREE.TextureLoader().load('./media/moon.jpg')
-const normalTexture = new THREE.TextureLoader().load('./media/normal.jpg')
+const moonTexture = new THREE.TextureLoader().load('/media/moon2.png')
+const normalTexture = new THREE.TextureLoader().load('/media/normal2.png')
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -103,13 +91,8 @@ moon.position.setX(-10)
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top
-  //moon.rotation.x+=0.08;
   moon.rotation.y += 0.095
-  //moon.rotation.z+=0.08;
-
-  lucas.rotation.y += 0.04
-  //lucas.rotation.z +=0.04;
-
+  lucas.rotation.y += 0.0
   camera.position.z = t * -0.08
   camera.position.x = t * -0.0009
   camera.position.y = t * -0.0009
