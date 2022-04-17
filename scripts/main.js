@@ -70,7 +70,7 @@ Array(250).fill().forEach(addStar)
 //spaceimg
 function renderSpace(){
 
-  const spaceTexture = new THREE.TextureLoader().load('/media/github.png')
+  const spaceTexture = new THREE.TextureLoader().load('/media/space2.png')
   scene.background = spaceTexture
 }
 
