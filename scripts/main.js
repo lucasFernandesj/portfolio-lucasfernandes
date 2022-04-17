@@ -29,10 +29,11 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 camera.position.setZ(10)
 renderer.render(scene, camera)
 
-const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
-
+// const brunoTexture = new THREE.TextureLoader().load('https://bruno-simon.com/prismic/matcaps/8.png')
+const brunoTexture = new THREE.TextureLoader().load('media/face1.jpg')
 const geometry = new THREE.TorusGeometry(15, 3, 16, 110)
 const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
+// const material = new THREE.MeshMatcapMaterial({ matcap:brunoTexture })
 const torus = new THREE.Mesh(geometry, material)
 
 torus.position.z = 30
@@ -49,8 +50,8 @@ controls.update()
 
 function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24)
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
-  const star = new THREE.Mesh(geometry, material)
+  const mat = new THREE.MeshStandardMaterial({ color: 0xffffff })
+  const star = new THREE.Mesh(geometry, mat)
   const [x, y, z] = Array(3)
     .fill()
     .map(() => THREE.MathUtils.randFloatSpread(100))
