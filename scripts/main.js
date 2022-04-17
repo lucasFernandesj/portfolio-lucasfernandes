@@ -71,10 +71,10 @@ function addStar() {
 }
 Array(250).fill().forEach(addStar)
 
-const spaceTexture = new THREE.TextureLoader().load('./media/space.jpg')
+const spaceTexture = new THREE.TextureLoader().load('/media/space.jpg')
 scene.background = spaceTexture
 
-const lucasTexture = new THREE.TextureLoader().load('./media/face1.jpg')
+const lucasTexture = new THREE.TextureLoader().load('/media/face1.jpg')
 const lucas = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
   new THREE.MeshBasicMaterial({ map: lucasTexture })
@@ -84,8 +84,8 @@ lucas.position.z =30
 scene.add(lucas)
 lucas.add(torus)
 
-const moonTexture = new THREE.TextureLoader().load('./media/moon.jpg')
-const normalTexture = new THREE.TextureLoader().load('./media/normal.jpg')
+const moonTexture = new THREE.TextureLoader().load('/media/moon.jpg')
+const normalTexture = new THREE.TextureLoader().load('/media/normal.jpg')
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(5, 32, 32),
   new THREE.MeshStandardMaterial({
